@@ -4,7 +4,8 @@
   "description": "Backup runner for InfinityFree using Puppeteer",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "puppeteer install"
   },
   "dependencies": {
     "puppeteer": "^22.8.2"

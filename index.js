@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const SECRET_KEY = 'youthgrowthcomunity123';  // GANTI sesuai dengan key di scheduler.php kamu
+  const SECRET_KEY = process.env.SECRET_KEY || 'youthgrowthcomunity123';
   const URL = `https://youthgrowthcomunity.rf.gd/scheduler.php?key=${SECRET_KEY}`;
-  
+
   console.log(`Opening: ${URL}`);
 
   const browser = await puppeteer.launch({
@@ -12,10 +12,9 @@ const puppeteer = require('puppeteer');
   });
 
   const page = await browser.newPage();
-  
-  // Tunggu sampai Javascriptnya selesai render
+
   await page.goto(URL, { waitUntil: 'networkidle2' });
-  
+
   console.log('Page content:');
   console.log(await page.content());
 

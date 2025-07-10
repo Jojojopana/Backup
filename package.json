@@ -8,6 +8,6 @@
     "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
-    "puppeteer": "^21.8.2"
+    "puppeteer": "^22.8.2"
   }
 }
